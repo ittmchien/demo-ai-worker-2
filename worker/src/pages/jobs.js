@@ -3,19 +3,41 @@ import Link from "next/link";
 import JobCard from "../components/JobCard";
 import Layout from "../components/Layout";
 
-const jobs = [
-  { id: 1, title: "Công nhân may", location: "Hà Nội", salary: "5-7 triệu" },
+export const allJobs = [
+  {
+    id: 1,
+    title: "Công nhân may",
+    location: "Hà Nội",
+    salary: "5-7 triệu",
+    skills: ["may", "thời trang"],
+  },
   {
     id: 2,
     title: "Công nhân điện tử",
     location: "Hồ Chí Minh",
     salary: "6-8 triệu",
+    skills: ["điện tử", "hàn"],
   },
   {
     id: 3,
     title: "Công nhân xây dựng",
     location: "Đà Nẵng",
     salary: "7-10 triệu",
+    skills: ["xây dựng", "sơn"],
+  },
+  {
+    id: 4,
+    title: "Công nhân lắp ráp",
+    location: "Hải Phòng",
+    salary: "5-7 triệu",
+    skills: ["lắp ráp", "cơ khí"],
+  },
+  {
+    id: 5,
+    title: "Công nhân dệt",
+    location: "Nam Định",
+    salary: "6-8 triệu",
+    skills: ["dệt", "may"],
   },
 ];
 
@@ -31,7 +53,7 @@ export default function Jobs() {
           Danh sách công việc
         </h1>
         <div className="grid grid-cols-1 gap-4">
-          {jobs.map((job) => (
+          {allJobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
         </div>

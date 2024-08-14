@@ -1,45 +1,9 @@
+import JobCard from "@/components/JobCard";
 import Head from "next/head";
 import { useState } from "react";
 import JobAlerts from "../components/JobAlerts";
 import Layout from "../components/Layout";
-
-const allJobs = [
-  {
-    id: 1,
-    title: "Công nhân may",
-    location: "Hà Nội",
-    salary: "5-7 triệu",
-    skills: ["may", "thời trang"],
-  },
-  {
-    id: 2,
-    title: "Công nhân điện tử",
-    location: "Hồ Chí Minh",
-    salary: "6-8 triệu",
-    skills: ["điện tử", "hàn"],
-  },
-  {
-    id: 3,
-    title: "Công nhân xây dựng",
-    location: "Đà Nẵng",
-    salary: "7-10 triệu",
-    skills: ["xây dựng", "sơn"],
-  },
-  {
-    id: 4,
-    title: "Công nhân lắp ráp",
-    location: "Hải Phòng",
-    salary: "5-7 triệu",
-    skills: ["lắp ráp", "cơ khí"],
-  },
-  {
-    id: 5,
-    title: "Công nhân dệt",
-    location: "Nam Định",
-    salary: "6-8 triệu",
-    skills: ["dệt", "may"],
-  },
-];
+import { allJobs } from "./jobs";
 
 export default function JobMatch() {
   const [userProfile, setUserProfile] = useState({
@@ -149,8 +113,6 @@ export default function JobMatch() {
           </button>
         </form>
 
-        <JobAlerts />
-
         <h2 className="text-xl md:text-2xl font-bold mb-4 mt-8">
           Công việc phù hợp
         </h2>
@@ -166,6 +128,7 @@ export default function JobMatch() {
             bạn.
           </p>
         )}
+        <JobAlerts />
       </main>
     </Layout>
   );
